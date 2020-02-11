@@ -204,6 +204,9 @@ go build
 git clone -b master https://github.com/hyperledger/fabric-samples.git && cd fabric-samples && git checkout v2.0.0
 ```
 ### 4.2 Binaries
+https://github.com/hyperledger/fabric/releases/
+https://github.com/hyperledger/fabric-ca/releases/  
+在上面地址中找到下面的两个压缩包下载，建议复制到迅雷中下载，速度较快
 ```
 cp -r hyperledger-fabric-ca-linux-amd64-1.4.4.tar.gz  ~/fabric-samples
 cp -r hyperledger-fabric-linux-amd64-2.0.0.tar.gz ~/fabric-samples
