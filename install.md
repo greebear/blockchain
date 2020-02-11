@@ -126,6 +126,10 @@ sudo vi /etc/docker/daemon.json
 ```
 {"registry-mirrors": ["https://registry.docker-cn.com","http://hub-mirror.c.163.com","http://f1361db2.m.daocloud.io"]}
 ```
+```
+// 在跑fabcar实例时，用阿里镜像速度更快些
+{"registry-mirrors": ["https://f1z25q5p.mirror.aliyuncs.com"]}
+```
 重启docker
 ```
 sudo systemctl restart docker
@@ -216,5 +220,10 @@ BINARIES=false
 ```
 chmod +x bootstrap.sh
 ./bootstrap.sh
+```
+
+## 5. 其他依赖安装
+```
+sudo apt-get install build-essential --fix-missing
 ```
 
