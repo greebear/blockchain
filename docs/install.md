@@ -1,4 +1,4 @@
-- 参考链接： https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html#prerequisites
+- 参考链接： https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html#prerequisites  
 ## 1. 安装node.js
 node.js下载网址：https://nodejs.org/en/  
 Choose LTS version of node.  
