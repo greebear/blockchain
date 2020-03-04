@@ -16,3 +16,6 @@
 
 ### println
 - print line
+
+### ctor string
+- Constructor message for the chaincode in JSON format (default "{}")

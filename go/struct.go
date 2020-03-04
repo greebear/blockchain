@@ -6,6 +6,7 @@ type Student struct {
 	name string
 	age int
 }
+
 func main() {
 	var stu1 Student
 	stu1.name = "apple"
@@ -31,5 +32,13 @@ func main() {
 	fmt.Println(stu4)  // &{apple 20}
 	fmt.Println(stu4.name) // apple
 	fmt.Println((*stu4).name) // apple
+	fmt.Println("-------------")
+
+	stu5 := new(Student)
+	stu5.name = "apple"
+	stu5.age = 20
+	fmt.Println(stu5)  // &{apple 20}
+	fmt.Println(stu5.name) // apple
+	fmt.Println((*stu5).name) // apple
 	fmt.Println("-------------")
 }
