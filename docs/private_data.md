@@ -1,4 +1,11 @@
 ## Private Data
+
+<a name="Table of Contents" />
+
+- [1. Start the network](#Release-Notes)
+
+<a name="Release-Notes" />
+
 ### 1. Start the network
     ./byfn.sh down
     ./byfn.sh up -c mychannel -s couchdb
@@ -90,7 +97,7 @@ Invoke
     -n marblesp \
     -c '{"Args":["initMarble"]}'  \
     --transient "{\"marble\":\"$MARBLE\"}"
-        
+     
 ### 5. Query
 Org1, Org2
 - name, color, size, owner

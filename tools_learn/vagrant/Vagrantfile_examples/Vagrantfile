@@ -1,0 +1,54 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+ENV["LC_ALL"] = "en_US.UTF-8"
+
+Vagrant.configure("2") do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://vagrantcloud.com/search.
+
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  config.vm.box_check_update = false
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # NOTE: This will enable public access to the opened port
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  (1..2).each do |i|
+   config.vm.define "blockchain-#{i}" do |node|
+    node.vm.box = "xenial"
+    node.vm.hostname="blockchain-#{i}"
+    node.vm.network "private_network", ip:"192.168.5.#{i+100}"
+    node.vm.synced_folder "~/Desktop/share","/home/vagrant/share"
+    node.vm.provider "virtualbox" do |v|
+      v.name = "blockchain-#{i}"
+      v.memory = 2048
+      v.cpus = 4
+   end
+   end
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+     # apt
+     sudo mv /etc/apt/sources.list /etc/apt/sources.list_backup
+     sudo cp /home/vagrant/share/sources.list /etc/apt/
+     sudo apt-get update
+     sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+     # docker 
+     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+     sudo apt-key fingerprint 0EBFCD88
+     sudo add-apt-repository "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+     sudo apt-get update
+  SHELL
+end

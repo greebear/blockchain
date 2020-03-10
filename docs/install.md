@@ -177,7 +177,7 @@ source /etc/profile
 验证
 ```
 sudo mkdir /opt/gopath/
-chmod -R 777 /opt/gopath/
+sudo chmod -R 777 /opt/gopath/
 cd /opt/gopath/
 mkdir -p ./src/hello/
 vi /opt/gopath/src/hello/hello.go
@@ -201,7 +201,9 @@ go build
 参考链接：https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh
 ### 4.1 Samples
 ```
-git clone -b master https://github.com/hyperledger/fabric-samples.git && cd fabric-samples && git checkout v2.0.0
+mkdir -p /opt/gopath/src/github.com/hyperledger/
+cd /opt/gopath/src/github.com/hyperledger/
+git clone -b master https://github.com/hyperledger/fabric-samples.git && cd fabric-samples && git checkout v1.4.6
 ```
 ### 4.2 Binaries
 https://github.com/hyperledger/fabric/releases/
