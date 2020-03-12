@@ -19,3 +19,6 @@
 
 ### ctor string
 - Constructor message for the chaincode in JSON format (default "{}")
+
+### FQDN
+- Fully Qualified Domain Name 正式域名

@@ -23,3 +23,11 @@ eg.
     alias sshbc1="cd someplace; vagrant ssh blockchain-1"
     // 输入下面命令不用重启terminal
     source ~/.bash_profile 
+    
+#### 7. 查看网络通不通
+- ping  
+    仅针对域名或ip
+- telnet  
+    可域名(ip) +
+- wget
+- nslookup    
