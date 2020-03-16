@@ -1,5 +1,6 @@
 ### CLI
 - Command Line Interface 命令行界面
+- client application 客户端应用
 
 ### spec
 - specification [ˌspesɪfɪˈkeɪʃn] 规范
@@ -22,3 +23,6 @@
 
 ### FQDN
 - Fully Qualified Domain Name 正式域名
+
+### PDC
+- private data collections 私有数据集
