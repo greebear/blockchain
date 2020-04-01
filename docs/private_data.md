@@ -53,8 +53,8 @@ peer1.org2.example.com:10051
     export CORE_PEER_ADDRESS=peer1.org2.example.com:10051
     
     peer chaincode install \
-    -n marblesp \ 
-    -v 1.0 cd\ 
+    -n marblesp \
+    -v 1.0 \
     -p github.com/chaincode/marbles02_private/go/
     
 ### 3. Instantiate the chaincode on the channel
@@ -264,7 +264,7 @@ Query marble1 but Purge
     // Note that docType and owner fields must be prefixed with the "data" wrapper
     //
     // Index definition for use with Fauxton interface
-    // {"index":{"fields":["data.docType","data.owner"]},"ddoc":"indexOwnerDoc", "name":"indexOwner","type":"json"}
+    // {"index":{"fields":["data.docType"   ,"data.owner"]},"ddoc":"indexOwnerDoc", "name":"indexOwner","type":"json"}
     
     // Index for docType, owner, size (descending order).
     // Note that docType, owner and size fields must be prefixed with the "data" wrapper

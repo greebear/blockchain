@@ -1,4 +1,13 @@
+<a name="Table of Contents" />
+
+- [私有数据](#Private-data)
+- [私有数据集(PDC)定义](#PDC-definition)
+
+
+<a name="Private-datas" />
+
 ## Private data
+
 ### 1. 如何保持共享私有数据
 #### 1.1 比较蠢的方法:
 当同一个通道下面的部分组织，希望使一些私有的数据其他组织无法访问，那么需要在这一部分组织之间创建一个新的通道。
@@ -52,12 +61,58 @@ https://hyperledger-fabric.readthedocs.io/en/release-1.4/_images/PrivateDataConc
         
 ### 4. PDC案例总结
 - 一个组织可以有多个SideDB
-    - 比如区块链聊天，一人(一个组织)需要与多人对话，建立多个SideDB
+    - 比如区块链chat，一人(一个组织)需要与多人对话，建立多个SideDB
         - 需要考虑的问题：SideDB扩容     
   
   
 -
+     
+<a name="PDC-definition" />
             
 ##  私有数据集(PDC)定义
 - 当进行链码实例化的时候，PDC的定义就被部署到通道上
-           
+### 1. 构建集定义(collection definition)json文件
+集定义(collection definition)功能
+- 谁可以持有数据
+- 将数据分布式存储在多少个节点上
+- 分发私有数据需要多少个节点
+- 数据库持有数据的时长
+
+集定义(collection definition)属性
+- name
+- policy 
+    - 定义组织中哪些节点可以持有数据集
+- requiredPeerCount
+    - 分发私有数据需要多少个节点，才能被链码认可
+- maxPeerCount
+    - 分布式储存的节点个数(背书节点)
+    - 一些背书节点失效，其他背书节点可以分发私有数据
+- blockToLive
+    - 数据在块上存有的时间，常用于敏感数据
+    - 设置为0时，用不清除数据
+- memberOnlyRead
+    - true 代表集的成员组织才有权限获取私有数据
+    - 这里的成员组织指(policy)所写成员
+    
+    
+    // collections_config.json
+    
+    [
+      {
+           "name": "collectionMarbles",
+           "policy": "OR('Org1MSP.member', 'Org2MSP.member')",
+           "requiredPeerCount": 0,
+           "maxPeerCount": 3,
+           "blockToLive":1000000,
+           "memberOnlyRead": true
+      },
+    
+      {
+           "name": "collectionMarblePrivateDetails",
+           "policy": "OR('Org1MSP.member')",
+           "requiredPeerCount": 0,
+           "maxPeerCount": 3,
+           "blockToLive":3,
+           "memberOnlyRead": true
+      }
+    ]
