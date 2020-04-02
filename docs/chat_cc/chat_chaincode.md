@@ -199,7 +199,7 @@ save message
 
 query message
 
-    PRIVATEKEY="-----BEGIN ECC PRIVATE KEY-----\nMHcCAQEEICcDUx7pU5xQc7wMaiWOZieZSg0il6KbtGZgbG/4FjsdoAoGCCqGSM49\nAwEHoUQDQgAE8Usda9enOP2ISGBTDjlK04qDkTEkaEcDoXdFl9kODCNEvKyA3e/7\nqq0M0vXNOeMsSNRd6IK1nknp8+jIyX58Sg==\n-----END ECC PRIVATE KEY-----\n"
+    PRIVATEKEY="-----BEGIN ECC PRIVATE KEY-----\nMHcCAQEEIP5ndjdD+WWDB0K/lQ08sqqu2jfH74o46iGz5S6PJKmHoAoGCCqGSM49\nAwEHoUQDQgAEDzrp9/WrAu7rEojHyynSwaEW3U4hW0TDkxSXClFPnwrcDng+iaPm\nzAE14M404Uaabdjnu0EPJ7REqFByiwBQvw==\n-----END ECC PRIVATE KEY-----\n"
     peer chaincode query \
       -C mychannel \
       -n chatcc \
