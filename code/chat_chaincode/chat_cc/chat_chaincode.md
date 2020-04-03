@@ -68,7 +68,7 @@ init members
 - greebear002
 - greebear003
 
-    
+---    
     MEMBER=$(echo -n "{\"name\":\"greebear001\"}" | base64 | tr -d \\n)
     export MEMBER
     peer chaincode invoke \
@@ -128,7 +128,7 @@ save message
 - greebear001 receive "天青色等烟雨" from greebear002 
 - greebear001 receive "而我在等你"   from greebear003
 
-
+---
     MESSAGE=$(echo -n "{\"receiver\":\"greebear001\",\"sender\":\"greebear002\",\"context\":\"天青色等烟雨\"}" | base64 | tr -d \\n)
     export MESSAGE
     peer chaincode invoke \
