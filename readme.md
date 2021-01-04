@@ -22,7 +22,7 @@ chat_chaincode
     └── chat_chaincode_auto.md  自动测试指令
 ```
 ## 2. 聊天APP
-![BlockChainChat](./assets/BlockChainChat.png) 
+![BlockChainChat](./assets/BlockChainChat-fixed.png) 
 ### 2.1 私有数据集配置
 相关配置可见` collections_config.json`
 #### 2.1.1 CA - collectionMembers
