@@ -28,7 +28,7 @@ chat_chaincode
 #### 2.1.1 CA - collectionMembers
 这里的CA指的不是fabric原生的CA，而是用于储存用户公钥、私钥的Collection。
 为什么称之为“Collection”，因为fabric私有数据保存时，可以设置不同的Collection，每个Collection中可以储存不通的数据，如下图所示。
-![SideDB-org1-org2](./assets/sideDb-org1-org2.png) 
+![SideDB-org1-org2](./assets/SideDb-org1-org2.png) 
 这里fabric官网教程中设置了Marbles和MarblesPrivateData两个Collection，Colleciton的功能有两种：
 - 1. 可以设置不同的Collection来存放不同关键字、不同类型的数据，类似于数据库中不同的表
 - 2. 可以设置哪些Org有访问权限
